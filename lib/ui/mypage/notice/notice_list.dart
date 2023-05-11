@@ -50,15 +50,13 @@ class NoticeList extends GetView<NoticeListController> {
                           decoration: InputDecoration(
                             border: InputBorder.none,
                             hintText: '검색어를 입력해주세요',
-                            hintStyle: GlobalStyle.setTextStyle('h6',
-                                'medium', GlobalStyle.orot_gray_dark),
+                            hintStyle: GlobalStyle.setTextStyle(
+                                'h6', 'medium', GlobalStyle.orot_gray_dark),
                             suffixIcon: SvgPicture.asset(
                               'images/svg/ic_mp_search.svg',
                             ),
-                            suffixIconConstraints: BoxConstraints(
-                                minHeight: 24.h,
-                                minWidth: 24.w
-                            ),
+                            suffixIconConstraints:
+                            BoxConstraints(minHeight: 24.h, minWidth: 24.w),
                           ),
                         ),
                       ),
@@ -67,24 +65,57 @@ class NoticeList extends GetView<NoticeListController> {
                         width: 1.sw,
                         height: 8,
                         decoration:
-                            BoxDecoration(color: const Color(0xfff5f7fa))),
-                    Container(height: 8.h,),
+                        BoxDecoration(color: const Color(0xfff5f7fa))),
+                    Container(
+                      height: 8.h,
+                    ),
                     ListView.separated(
                         padding: EdgeInsets.only(left: 20.w, right: 20.w),
                         itemCount: 10,
                         itemBuilder: (BuildContext context, int index) {
-                          return NoticeListTile(
-                              title: '병원 진료 기록 기능이 생겼어요',
-                              date: '2023.05.29'
+                          return ListTile(
+                            onTap: () {},
+                            contentPadding: EdgeInsets.zero,
+                            minVerticalPadding: 0,
+                            horizontalTitleGap: 0,
+                            title: Container(
+                              padding: EdgeInsets.only(left: 8.w),
+                              height: 73.h,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      Get.toNamed('/NoticeView');
+                                    },
+                                    child: Text(
+                                      '병원 진료 기록 기능이 생겼어요',
+                                      style: GlobalStyle.setTextStyle(
+                                          'h4', 'semi_bold', GlobalStyle.orot_black),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 8.h,
+                                  ),
+                                  Text(
+                                    '2023.05.29',
+                                    style: GlobalStyle.setTextStyle(
+                                        'h8', 'regular', GlobalStyle.orot_gray_darker),
+                                  )
+                                ],
+                              ),
+                            ),
                           );
                         },
-                        separatorBuilder:  (BuildContext context, int index) {
+                        separatorBuilder: (BuildContext context, int index) {
                           return Divider(
                             thickness: 1,
-                            color: GlobalStyle.orot_gray_lighter,);},
+                            color: GlobalStyle.orot_gray_lighter,
+                          );
+                        },
                         shrinkWrap: true,
-                        primary: false
-                    ),
+                        primary: false),
                     Container(
                       padding: EdgeInsets.only(top: 16.h),
                     ),
@@ -100,45 +131,3 @@ class NoticeList extends GetView<NoticeListController> {
 }
 
 void setState(Null Function() param0) {}
-
-
-class NoticeListTile extends StatelessWidget {
-  final String title;
-  final String date;
-
-  NoticeListTile({
-    Key? key,
-    required this.title,
-    required this.date,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-
-    return ListTile(
-      onTap: () {},
-      contentPadding: EdgeInsets.zero,
-      minVerticalPadding: 0,
-      horizontalTitleGap: 0,
-      title: Container(
-        padding: EdgeInsets.only(left: 8.w),
-        height: 73.h,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(title,
-              style: GlobalStyle.setTextStyle('h4',
-                  'semi_bold', GlobalStyle.orot_black),
-            ),
-            Container(height: 8.h,),
-            Text(date,
-              style: GlobalStyle.setTextStyle('h8',
-                  'regular', GlobalStyle.orot_gray_darker),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
