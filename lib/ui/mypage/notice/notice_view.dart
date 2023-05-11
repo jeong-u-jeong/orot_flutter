@@ -40,6 +40,7 @@ class NoticeView extends GetView<NoticeViewController> {
                   ],
                 ),
                 Container(
+                  margin: EdgeInsets.only(bottom: 48.h),
                   padding: EdgeInsets.symmetric(horizontal: 4.w),
                   child: Text('안녕하세요. 오롯입니다. 이것이야말로 무엇이 예수는 살았으며, 크고 봄바람을 약동하다. 따뜻한 반짝이는 피가 것은 미인을 넣는 때문이다. 풍부하게 인생에 시들어 있을 가치를 힘있다. 맺어, 그들은 같이 살 품고 칼이다. 새 얼마나 인생에 사랑의 것이다. 보라, 인간의 돋고, 그리하였는가? 방지하는 그들의 그들은 같은 소담스러운 무한한 내는 풍부하게 방황하여도, 위하여서. 같이, 너의 품에 간에 싸인 보배를 관현악이며, 굳세게 서있는가? 얼음이 예수는 앞이 것이다. 바로 길을 눈에 그들의 크고 지혜는 부패뿐이다. 피고, 이상, 인간은 이것이다. 든 목숨을 청춘 약동하다.',
                     style: GlobalStyle.setTextStyle('h6',

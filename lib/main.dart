@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:orot/global_asset/routers.dart';
 import 'package:orot/ui/home/page/hone_page.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:orot/ui/mypage/customersupport/customer_support.dart';
 import 'package:orot/ui/mypage/instructions/instructions.dart';
 import 'package:orot/ui/mypage/notice/notice_view.dart';
 import 'package:orot/ui/register/page/register_info_step00_new_page.dart';
@@ -165,7 +166,7 @@ class _MyAppState extends State<MyApp> {
                   //home: MyHomePage(),
                 }
               },
-              home: HomePage(),
+              home: CustomerSupport(),
               getPages: RouterPages.routes,
             ));
   }
